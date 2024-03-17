@@ -11,7 +11,7 @@ console.log('Animals are: ', animalArray);
 //    Be sure to console.log your array of foods to the console with
 //    a message, similar to the example above.
   let favoriteFoods = ['lemon', 'ginger', 'apple', 'watermelon', 'cucumber'];
-  console.log('Favorite foods include:', favoriteFoods);
+  console.table('Favorite food recipe:', favoriteFoods);
 
 // Array.length: A property that tells you how many items are in a given array.
 console.log('--- 2. Length of an array ---');
@@ -46,13 +46,13 @@ console.log('First animal is', firstAnimal);
 //      sure that your code does what you want. (Never trust your code until
 //      you have proof that it works!)
     let lastAnimal = animalArray[3];
+    console.log(animalArray);
       console.log( 'last animal is', lastAnimal);
 
 // 3.c. (STRETCH) TODO: Refactor 3.b to use the `animalArray` variable's .length 
 //       property, rather than the exact (hardcoded) index number of the last item.
-// let lastAnimal = animalArray.length[animalArray.length - 1];
- // console.log(lastAnimal);
- //coming back undefined, any idea why?
+let finalAnimal = animalArray[animalArray.length - 1];
+console.log('Final:', finalAnimal);
 
 // Adding & Removing Array Items
 console.log('--- 4. Adding and removing array items ---');
@@ -66,9 +66,9 @@ console.log('Added an animal to end,', animalArray);
 //      a dessert that you love.
 //      Similar to above, add the `dessert` to the end of your `favoriteFoods`
 //      array. (How can you be 100% certain this worked? 🤔)
-    let dessert = 'grilledPineapple';
+    let dessert = 'Grilled Pineapple';
     favoriteFoods.push(dessert);
-    console.log(favoriteFoods);
+    console.log('Favorite foods:', favoriteFoods);
 
 // Example: Add to the beginning of an array using the Array.unshift method.
 let animalToUnshift = 'walrus';
@@ -79,7 +79,7 @@ console.log(`Added an animal to beginning: ${animalArray}`);
 //      an entree that you enjoy.
 //      Add the `entree` to the beginning of your `favoriteFoods` array.
     let entree = 'plantain';
-    favoriteFoods.unshift( entree );
+    favoriteFoods.unshift(entree);
     console.log( 'Added an entree to the beginning',favoriteFoods );
 
 // Example: Remove the last animal by using the Array.pop method.
@@ -89,6 +89,7 @@ console.log('The animals are now', animalArray);
 
 // NOTE: Use the `colors` array for 4.c and 4.d.
 let colors = ['orange', 'yellow', 'green', 'teal'];
+console.log('Colors:', colors);
 
 // 4.c. TODO: The last value inside the `colors` array was added by mistake.
 //      Remove it from the array and store it inside a new variable called
@@ -117,14 +118,19 @@ console.log('The animals are now', animalArray);
 // STRETCH GOALS:
 
 let gems = ['Topaz', 'Citrine', 'Diamond', 'Emerald', 'Iolite', 'Tanzanite'];
+console.table('Gems:',gems );
 
 // 5.a (STRETCH) TODO: Replace the second gem with 'Tourmaline'.
 //      Remember to console.log the updated array.
-
+gems[1] = 'Tourmaline';
+console.table('Gems:',gems );
 
 // 5.b (STRETCH) TODO: Sort your gems array in reverse alphabetical order.
 //     Please console.log the sorted array.
-
+gems.sort(); //sort in alphabetical order first
+console.log('Alphabetically ordered gems:',gems);
+gems.reverse(); //Missy Elliot flip it and reverse it
+console.log('Gems reversed',gems);
 
 // 5.c (STRETCH) TODO: Create a variable `gemString` and assign it a string value
 //     that's made up of each value from the `gems` array, but separated by the
@@ -133,15 +139,16 @@ let gems = ['Topaz', 'Citrine', 'Diamond', 'Emerald', 'Iolite', 'Tanzanite'];
 //       "Emerald and Diamond and Tourmaline and Topaz"
 //     🔥 You'll need to research the .join Array method. 🔥
 //     Don't forget to console.log `gemString`...
-
+let gString = gems.join(' and ');
+console.log(gString);
 
 // 5.d (STRETCH) TODO: Make a new array `colorfulGems` that combines 
 //     the gems array with the colors array.
 //     It should look something like:
 //       ['Tourmaline', 'Topaz', 'Tanzanite', 'Iolite', 'Emerald', 'Diamond', 'yellow', 'green']
 //     Now, console.log the new array.
-
-
+let colorfulGems = gems.concat(colors);
+console.log('Rainbow beauty of ', colorfulGems);
 
 
 // DO NOT MODIFY
